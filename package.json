@@ -1,0 +1,15 @@
+{
+  "name": "aaaaa",
+  "version": "1.0.0",
+  "description": "aaaaaa",
+  "main": "index.js",
+  "dependencies": {
+    "@types/knockout": "^3.4.45"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

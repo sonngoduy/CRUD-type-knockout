@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+  <div class="container">
+    <button type="button" data-bind ="click: ShowTime.bind($root, Date())">Show Time</button>
+    </br>
+    <h2 id="h2Msg" style="color:red;"></h2>
+    <h1 class="text-center">Simple CRUD</h1>
+    <div style="margin-bottom: 150px"></div>
+    <div class="row" style="margin-bottom: 20px">
+      <div class="col-md-6" data-bind="visible: isAddNew()">
+        <div class="form-group">
+          <label for="">First name</label>
+          <input class="form-control" data-bind="value: newUser.first_name">
+        </div>
+        <div class="form-group">
+          <label for="">Last name</label>
+          <input class="form-control" data-bind="value: newUser.last_name">
+        </div>
+        <div class="form-group">
+          <label for="">Email</label>
+          <input class="form-control" data-bind="value: newUser.email">
+        </div>
+        <div class="form-group">
+          <label for="">Phone</label>
+          <input class="form-control" data-bind="value: newUser.phone">
+        </div>
+        <div class="form-group">
+          <label for="">Birthday</label>
+          <input class="form-control" data-bind="value: newUser.birth">
+        </div>
+        <button class="btn btn-primary" data-bind="click: saveUser">Save</button>
+      </div>
+      <div class="col-md-12">
+      </div>
+    </div>
+    <button class="btn btn-success" data-bind="click: addNew">Add new</button>
+    <div class="table-responsive">
+        <table class="table table-border">
+           <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Date Of Birth</th>
+                    <th></th>
+                </tr>
+           </thead>
+           <tbody data-bind="foreach: users">
+                <tr data-bind="visible: !isEdit()">
+                  <td data-bind="text: first_name"></td>
+                  <td data-bind="text: email"></td>
+                  <td data-bind="text: phone"></td>
+                  <td data-bind="text: birth"></td>
+                  <td><a href="#" data-bind="click: () => {$root.editUser($data)}">Edit</a></td>
+                  <td><a href="#" data-bind="click: () => {$root.removeUser($data)}">Remove</a></td>
+                  <td><span data-bind="text: $data.first_name"></span></td>
+                </tr>
+                <tr data-bind="visible: isEdit()">
+                    <td><input class="form-control" data-bind="value: first_name"></td>
+                    <td><input class="form-control" data-bind="value: email"></td>
+                    <td><input class="form-control" data-bind="value: phone"></td>
+                    <td><input class="form-control" data-bind="value: birth"></td>
+                    <td><a href="#" data-bind="click: () => {$root.editUser($data)}">Save</a></td>
+                    <td><a href="#" data-bind="click: () => {$root.removeUser($data)}">Remove</a></td>
+                    <td><span data-bind="text: $data.first_name"></span></td>
+                </tr>
+           </tbody>
+        </table>
+      </div>
+</div>
+
+<!-- Javascript -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<script src="external/require.js"></script>
+<script src="built/require-config.js"></script>
+<script>
+    require(["built/app"]);
+</script>
+<!-- <script>
+     function ShowTime(toDayDate) {
+      document.getElementById("h2Msg").innerHTML = "Time is -- " + toDayDate;
+  }
+</script> -->
+</body>
+</html>
