@@ -71,7 +71,7 @@
                     <td><input class="form-control" data-bind="value: phone"></td>
                     <td><input class="form-control" data-bind="value: birth"></td>
                     <td><a href="#" data-bind="click: () => {$root.editUser($data)}">Save</a></td>
-                    <td><a href="#" data-bind="click: () => {$root.removeUser($data)}">Remove</a></td>
+                    <td><a href="#" data-bind="click: () => {$root.backUser($data)}">Back</a></td>
                     <td><span data-bind="text: $data.first_name"></span></td>
                 </tr>
            </tbody>
@@ -88,10 +88,5 @@
 <script>
     require(["built/app"]);
 </script>
-<!-- <script>
-     function ShowTime(toDayDate) {
-      document.getElementById("h2Msg").innerHTML = "Time is -- " + toDayDate;
-  }
-</script> -->
 </body>
 </html>

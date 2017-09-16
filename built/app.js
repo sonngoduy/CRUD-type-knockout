@@ -33,14 +33,6 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
             this.newUser.phone("");
             this.newUser.birth("");
         };
-        // editUSer(){
-        //     this.users.
-        // }
-        // removeUser(user : User)
-        // {    
-        //      console.log(user);
-        //      this.users.remove(user);
-        // }
         HelloViewModel.prototype.removeUser = function (user) {
             var _self = this;
             _self.users.remove(user);
@@ -49,6 +41,9 @@ define(["require", "exports", "knockout"], function (require, exports, ko) {
             document.getElementById("h2Msg").innerHTML = "Time is -- " + toDayDate;
         };
         HelloViewModel.prototype.editUser = function (user) {
+            user.isEdit(!user.isEdit());
+        };
+        HelloViewModel.prototype.backUser = function (user) {
             user.isEdit(!user.isEdit());
         };
         return HelloViewModel;

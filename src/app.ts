@@ -57,17 +57,6 @@ class HelloViewModel {
         this.newUser.birth("");
     }
 
-    // editUSer(){
-    //     this.users.
-    // }
-
-    // removeUser(user : User)
-    // {    
-    //      console.log(user);
-    //      this.users.remove(user);
-         
-    // }
-
     removeUser (user : User) {
         var _self = this;
         _self.users.remove(user);
