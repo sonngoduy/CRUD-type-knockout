@@ -82,6 +82,9 @@ class HelloViewModel {
         user.isEdit(!user.isEdit());
     }
 
+    backUser (user : User){
+        user.isEdit(!user.isEdit());
+    }
 }
 
 ko.applyBindings(new HelloViewModel());
