@@ -11,9 +11,6 @@
 </head>
 <body>
   <div class="container">
-    <button type="button" data-bind ="click: ShowTime.bind($root, Date())">Show Time</button>
-    </br>
-    <h2 id="h2Msg" style="color:red;"></h2>
     <h1 class="text-center">Simple CRUD</h1>
     <div style="margin-bottom: 150px"></div>
     <div class="row" style="margin-bottom: 20px">
@@ -38,7 +35,7 @@
           <label for="">Birthday</label>
           <input class="form-control" data-bind="value: newUser.birth">
         </div>
-        <button class="btn btn-primary" data-bind="click: saveUser">Save</button>
+        <button class="btn btn-primary" data-bind="click: addUser">Save</button>
       </div>
       <div class="col-md-12">
       </div>
@@ -63,16 +60,14 @@
                   <td data-bind="text: birth"></td>
                   <td><a href="#" data-bind="click: () => {$root.editUser($data)}">Edit</a></td>
                   <td><a href="#" data-bind="click: () => {$root.removeUser($data)}">Remove</a></td>
-                  <td><span data-bind="text: $data.first_name"></span></td>
                 </tr>
                 <tr data-bind="visible: isEdit()">
                     <td><input class="form-control" data-bind="value: first_name"></td>
                     <td><input class="form-control" data-bind="value: email"></td>
                     <td><input class="form-control" data-bind="value: phone"></td>
                     <td><input class="form-control" data-bind="value: birth"></td>
-                    <td><a href="#" data-bind="click: () => {$root.editUser($data)}">Save</a></td>
-                    <td><a href="#" data-bind="click: () => {$root.backUser($data)}">Back</a></td>
-                    <td><span data-bind="text: $data.first_name"></span></td>
+                    <td><a href="#" data-bind="click: () => {$root.saveUser($data)}">Save</a></td>
+                    <td><a href="#" data-bind="click: () => {$root.backUser($data)}">Cancel</a></td>
                 </tr>
            </tbody>
         </table>
